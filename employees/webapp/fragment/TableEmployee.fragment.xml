@@ -34,7 +34,7 @@
                 </Column>
             </columns>
             <items>
-                <ColumnListItem id="_IDGenColumnListItem1">
+                <ColumnListItem id="_IDGenColumnListItem1" type="Navigation">
                     <cells>
                         <Label id="_IDGenLabel5" text="{jsonEmployees>EmployeeID}"/>
                         <Label id="_IDGenLabel6" text="{jsonEmployees>LastName},{jsonEmployees>FirstName}"/>

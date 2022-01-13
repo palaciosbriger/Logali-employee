@@ -4,28 +4,38 @@
     displayBlock="true"
     xmlns="sap.m"
     xmlns:core="sap.ui.core"
->
+    xmlns:f="sap.f">
+
     <Shell id="shell">
         <App id="app">
             <pages>
-                <Page id="page" title="{i18n>title}">
-                    <content >
-                        <HBox id="_IDGenHBox1">
-                            <Label id="labelEmployee" labelFor="inputEmployee" text="{i18n>labelEmployee}" class="sapUiSmallMargin"/>
-                            <Input id="inputEmployee" value = "{jsonCountries>/EmployeeId}" maxLength="6" width="200px" class="sapUiSmallMarginEnd"/>
-                            <Label id="labelCountry" labelFor="slCountry" text="{i18n>labelCountry}" class="sapUiSmallMargin" visible="true"/>
-                            <Select id="slCountry" selectedKey="{jsonCountries>/CountryKey}" forceSelection="false" items="{jsonCountries>/ListCountry}" class="sapUiSmallMarginEnd" visible="true">
-                                <items>
-                                    <core:Item id="_IDGenItem1" key="{jsonCountries>Key}" text="{jsonCountries>Text}"/>
-                                </items>
-                            </Select>
-                            <Button id="btnFilter" text="{i18n>btnFilter}" icon="sap-icon://search" press="onFilter" class="sapUiSmallMarginEnd"/>
-                            <Button id="btnClearFilter" text="{i18n>btnClearFilter}" icon="sap-icon://clear-filter" press="onClearFilter" class="sapUiSmallMarginEnd"/>
-                        </HBox>
-                        <core:Fragment fragmentName="logaligroup.employees.fragment.TableEmployee" type="XML"/>
+                <Page id="pag1" showHeader="false" >
+                    <content>
+                        <f:FlexibleColumnLayout id="fcl" backgroundDesign="Solid" layout="{jsonLayout>/ActiveKey}">
+                            <f:beginColumnPages>
+                                <mvc:XMLView id="masterEmployeeView" viewName="logaligroup.employees.view.MasterEmployee"></mvc:XMLView>
+                            </f:beginColumnPages>
+                            <f:midColumnPages>
+                                <mvc:XMLView id="detailsEmployeeView" viewName="logaligroup.employees.view.EmployeeDetails"></mvc:XMLView>
+                            </f:midColumnPages>
+                            <f:endColumnPages>
+                                <Page id="pag2">
+                                
+                                </Page>
+                            </f:endColumnPages>
+                        </f:FlexibleColumnLayout>
                     </content>
+                    <footer>
+                        <Toolbar >
+                            <Label text="{i18n>layout}" class="sapUiSmallMargin"></Label>
+                            <Select items="{jsonLayout>/Layout}" selectedKey="{jsonLayout>/ActiveKey}">
+                                <core:Item key="{jsonLayout>Key}" text="{jsonLayout>Text}"></core:Item>
+                            </Select>
+                        </Toolbar>                    
+                    </footer>
                 </Page>
             </pages>
         </App>
     </Shell>
+
 </mvc:View>

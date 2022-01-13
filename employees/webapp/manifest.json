@@ -98,7 +98,14 @@
           "clearControlAggregation": false,
           "viewId": "Main",
           "viewName": "Main"
-        }
+        },
+        "TargetMasterEmployee": {
+            "viewType": "XML",
+            "transition": "slide",
+            "clearControlAggregation": false,
+            "viewId": "MasterEmployee",
+            "viewName": "MasterEmployee"
+          }
       }
     },
     "rootView": {
