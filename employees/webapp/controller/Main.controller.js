@@ -36,6 +36,20 @@ sap.ui.define([
             //         console.log(JSON.stringify(oJSONModel.getData()));  
             //     });
 
+            this._bus = sap.ui.getCore().getEventBus();
+
+            this._bus.subscribe("flexible","showEmployee", this.showEmployeeDetails, this);
+
+
+
+
+        },
+        showEmployeeDetails: function(category, nameEvent, path){
+            
+            var oView = this.getView();
+            var detailView = oView.byId("pag1");
+            detailView.bindElement("jsonEmployees>" + path);
+            this.getView().getModel("jsonLayout").setProperty("/ActiveKey","TwoColumnsMidExpanded");
 
         }
 
