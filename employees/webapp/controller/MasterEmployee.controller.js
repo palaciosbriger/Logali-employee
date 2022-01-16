@@ -83,8 +83,9 @@ sap.ui.define([
         };
 
         function showEmployee(oEvent){
+
             var path = oEvent.getSource().getBindingContext("jsonEmployees").getPath();
-            this._bus.publish("flexible","showEmployee",path);
+            this._bus.publish("flexible", "showEmployee", path);
 
         };
         var Main = Controller.extend("logaligroup.employees.controller.MasterEmployee", {});

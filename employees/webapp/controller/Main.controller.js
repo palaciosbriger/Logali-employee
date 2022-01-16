@@ -44,12 +44,17 @@ sap.ui.define([
 
 
         },
-        showEmployeeDetails: function(category, nameEvent, path){
-            
-            var oView = this.getView();
-            var detailView = oView.byId("pag1");
-            detailView.bindElement("jsonEmployees>" + path);
+        showEmployeeDetails: function(category, nameEvent, path){            
+           
+            //var detailView = this.getView().byId("detailEmployeeView");
+            var detailView = this.getView().byId("pag1");
+            detailView.bindElement("jsonEmployees>" + path);            
             this.getView().getModel("jsonLayout").setProperty("/ActiveKey","TwoColumnsMidExpanded");
+
+            var incidenceModel = new sap.ui.model.json.JSONModel([]);
+            detailView.setModel(incidenceModel,"incidenceModel");
+            //detailView.byId("tableIncidence").removeAllContent();
+
 
         }
 

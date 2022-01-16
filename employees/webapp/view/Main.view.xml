@@ -16,7 +16,7 @@
                                 <mvc:XMLView id="masterEmployeeView" viewName="logaligroup.employees.view.MasterEmployee"></mvc:XMLView>
                             </f:beginColumnPages>
                             <f:midColumnPages>
-                                <mvc:XMLView id="detailEmpView" viewName="logaligroup.employees.view.EmployeeDetails"></mvc:XMLView>
+                                <mvc:XMLView id="detailEmployeeView" viewName="logaligroup.employees.view.EmployeeDetails"></mvc:XMLView>
                             </f:midColumnPages>
                             <f:endColumnPages>
                                 <Page>
