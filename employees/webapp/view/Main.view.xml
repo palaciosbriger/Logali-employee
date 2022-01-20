@@ -26,10 +26,10 @@
                         </f:FlexibleColumnLayout>
                     </content>
                     <footer>
-                        <Toolbar id="_IDGenToolbar1" >
-                            <Label id="_IDGenLabel1" text="{i18n>layout}" class="sapUiSmallMargin"></Label>
-                            <Select id="_IDGenSelect1" items="{jsonLayout>/Layout}" selectedKey="{jsonLayout>/ActiveKey}">
-                                <core:Item id="_IDGenItem1" key="{jsonLayout>Key}" text="{jsonLayout>Text}"></core:Item>
+                        <Toolbar>
+                            <Label text="{i18n>layout}" class="sapUiSmallMargin"></Label>
+                            <Select items="{jsonLayout>/Layout}" selectedKey="{jsonLayout>/ActiveKey}">
+                                <core:Item key="{jsonLayout>Key}" text="{jsonLayout>Text}"></core:Item>
                             </Select>
                         </Toolbar>                    
                     </footer>

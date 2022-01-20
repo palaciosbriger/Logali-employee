@@ -1,8 +1,10 @@
 sap.ui.define([
     'sap/ui/core/mvc/Controller'
-], function(Controller) {
+], 
+
+function(Controller) {
     
-    return Controller.extend("logaligroup.employees.controller.EmployeeDetails",{
+    return Controller.extend("logaligroup.employees.controller.Main",{
         onInit: function(){
             
             var oView = this.getView();
@@ -46,14 +48,13 @@ sap.ui.define([
         },
         showEmployeeDetails: function(category, nameEvent, path){            
            
-            //var detailView = this.getView().byId("detailEmployeeView");
-            var detailView = this.getView().byId("pag1");
+            var detailView = this.getView().byId("detailEmployeeView");  
             detailView.bindElement("jsonEmployees>" + path);            
             this.getView().getModel("jsonLayout").setProperty("/ActiveKey","TwoColumnsMidExpanded");
 
             var incidenceModel = new sap.ui.model.json.JSONModel([]);
             detailView.setModel(incidenceModel,"incidenceModel");
-            //detailView.byId("tableIncidence").removeAllContent();
+            detailView.byId("tableIncidence").removeAllContent();
 
 
         }
