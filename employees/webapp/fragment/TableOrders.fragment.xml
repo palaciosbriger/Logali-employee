@@ -18,7 +18,7 @@
             </Column>
         </columns>
         <items>
-            <ColumnListItem id="colList">
+            <ColumnListItem id="colList" type="Navigation" press="toOrderDetails">
                 <cells>
                     <Label id="labOrderID" text="{odataNorthwind>OrderID}"/>
                     <Label id="labFreight" text="{odataNorthwind>Freight}"/>

@@ -19,23 +19,22 @@
                     "odataVersion": "4.0"
                 }
             },
-            "Northwind.svc":{
+            "Northwind.svc": {
                 "uri": "V2/Northwind/Northwind.svc/",
                 "type": "OData",
-                "settings":{
+                "settings": {
                     "odataVersion": "2.0",
                     "localUri": "localService/metadata.xml"
                 }
             },
-            "YSAPUI5_SRV_01":{
+            "YSAPUI5_SRV_01": {
                 "uri": "/sap/opu/odata/sap/YSAPUI5_SRV_01/",
                 "type": "OData",
-                "settings":{
+                "settings": {
                     "odataVersion": "2.0",
                     "localUri": "localService/YSAPUI5_SRV_01/metadata.xml"
                 }
             }
-            
         }
     },
     "sap.ui": {
@@ -77,17 +76,17 @@
                 "dataSource": "Northwind.svc",
                 "preload": true,
                 "settings": {
-                    "defaultOperationMode" : "Server",
+                    "defaultOperationMode": "Server",
                     "defaultBindingMode": "OneWay",
                     "defaultCountMode": "Request",
                     "refreshAfterChange": false
                 }
             },
-            "incidenceModel" : {
+            "incidenceModel": {
                 "type": "sap.ui.model.odata.v2.ODataModel",
                 "dataSource": "YSAPUI5_SRV_01",
                 "preload": true,
-                "settings" : {
+                "settings": {
                     "defaultOperationMode": "Server",
                     "defaultBindingMode": "TwoWay",
                     "defaultCountMode": "Request",
@@ -117,9 +116,16 @@
             "routes": [
                 {
                     "name": "RouteMain",
-                    "pattern": "RouteMain",
+                    "pattern": "",
                     "target": [
                         "TargetMain"
+                    ]
+                },
+                {
+                    "name": "RouteOrderDetails",
+                    "pattern": "OrderDetails/{OrderID}",
+                    "target": [
+                        "TargetOrderDetails"
                     ]
                 }
             ],
@@ -131,20 +137,18 @@
                     "viewId": "Main",
                     "viewName": "Main"
                 },
-                "TargetMasterEmployee": {
-                    "viewType": "XML",
-                    "transition": "slide",
-                    "clearControlAggregation": false,
-                    "viewId": "MasterEmployee",
-                    "viewName": "MasterEmployee"
+                "TargetOrderDetails": {
+                    "viewType": "XML",   
+                    "viewId": "OrderDetails",        
+                    "viewName": "OrderDetails"
                 }
             }
         },
         "rootView": {
-            "viewName": "logaligroup.employees.view.Main",
+            "viewName": "logaligroup.employees.view.App",
             "type": "XML",
             "async": true,
-            "id": "Main"
+            "id": "app"
         }
     }
 }
