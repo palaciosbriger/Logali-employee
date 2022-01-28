@@ -32,6 +32,10 @@ sap.ui.define([
                     var oRouter = sap.ui.core.UIComponente.getRouterFor(this);
                     oRouter.navTo("RouteMain", true);
                 }
+            },
+            onClearSignature: function(oEvent) {
+                var signature = this.byId("signature");
+                signature.clear();
             }
         });
     });  

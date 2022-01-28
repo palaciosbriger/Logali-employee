@@ -12,7 +12,7 @@
       "runtimeExecutable": "npx",
       "args": [
         "--open",
-        "test/flpSandbox.html#logaligroupemployees-display"
+        "index.html"
       ],
       "windows": {
         "runtimeExecutable": "npx.cmd"
