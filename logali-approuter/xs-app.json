@@ -1,23 +1,5 @@
 {
     "authenticationMethod": "none",    
-    "welcomeFile": "/index.html",
-    "logout":{
-        "logoutEndPoint": "/do/logout"
-    },
-    "routes": [
-        {
-            "authenticationType": "none",
-            "source": "^/V2/Northwind/Northwind.svc/(.*)$",
-            "destination": "Northwind",            
-            "csrfProtection": true,
-            "target": "$1"            
-        },
-        {
-            "authenticationType": "xsuaa",
-            "source": "^(.*)$",
-            "destination": "Northwind",
-            "service": "html5-apps-repo-rt",
-            "target": "$1"    
-        }
-    ]
+    "welcomeFile": "logaligroupemployees",
+    "routes": []
 }
